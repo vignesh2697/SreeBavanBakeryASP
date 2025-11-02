@@ -94,18 +94,19 @@
                                     <asp:Button ID="btn_Delete" runat="server" Text="Delete" CssClass="btn btn-warning btn-shadow btn-lg" type="submit" OnClick="btn_Delete_Click" />
                                 </div>
                                 <div class="col-md-12">
-                                    <asp:GridView ID="dgv_employeeList" runat="server" AutoGenerateColumns="False"
+                                    <asp:GridView ID="dgv_employeeList" runat="server" AutoGenerateColumns="False" OnPageIndexChanging="dgv_employeeList_PageIndexChanging"
+                                        OnSelectedIndexChanged="dgv_employeeList_SelectedIndexChanged" OnRowCommand="dgv_employeeList_RowCommand"
                                         CssClass="table table-sm table-condensed table-hover"
                                         AutoGenerateSelectButton="True" BackColor="White"
                                         BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                                         CellPadding="4" ForeColor="Black" GridLines="Horizontal"
-                                        EmptyDataText="Record Not Found..."
-                                        AllowPaging="True" PageSize="2"
-                                        Font-Size="10pt" OnSelectedIndexChanged="dgv_employeeList_SelectedIndexChanged" DataKeyNames="Emp ID,Emp Photo" OnRowCommand="dgv_employeeList_RowCommand">
+                                        EmptyDataText="Record Not Found..." DataKeyNames="Emp ID,Emp Photo"
+                                        AllowPaging="True" PageSize="2" Font-Size="10pt">
                                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                        <RowStyle HorizontalAlign="Center" />
                                         <PagerStyle BackColor="#E0E0E0" ForeColor="#333333" HorizontalAlign="Right" CssClass="GridPager" />
                                         <PagerSettings Position="Bottom" />
+                                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
                                         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                                         <SortedAscendingCellStyle BackColor="#F7F7F7" />
                                         <SortedAscendingHeaderStyle BackColor="#4B4B4B" />

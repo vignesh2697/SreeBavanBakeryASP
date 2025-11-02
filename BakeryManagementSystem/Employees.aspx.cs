@@ -213,5 +213,11 @@ namespace Bakery
                 ViewState["oldFilePath"] = dgv_employeeList.DataKeys[rowIndex].Values[1];
             }
         }
+
+        protected void dgv_employeeList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgv_employeeList.PageIndex = e.NewPageIndex;
+            LoadData();
+        }
     }
 }
