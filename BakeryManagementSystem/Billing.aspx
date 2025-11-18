@@ -115,12 +115,12 @@
                     <div class="col-lg-7">
                         <div class="section-content bg-white p-5 shadow">
                             <div class="row">
-                                <div class="col-md-12" style="height:207px; overflow:auto" >
+                                <div class="col-md-12" style="height:183px; overflow:auto" >
                                     <asp:GridView ID="dgv_Billing" runat="server"
                                         CssClass="table table-sm table-condensed table-hover" BackColor="White"
                                         BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                                         CellPadding="4" ForeColor="Black" GridLines="Horizontal"
-                                        EmptyDataText="Record Not Found..."
+                                        EmptyDataText="Record Not Found..." ShowHeaderWhenEmpty="true"
                                         Font-Size="10pt" OnRowDataBound="dgv_Billing_RowDataBound">
                                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -139,6 +139,7 @@
                                     </asp:GridView>
                                 </div>
                             </div>
+                            <br />
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row align-items-center">

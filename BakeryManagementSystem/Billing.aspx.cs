@@ -8,13 +8,14 @@ namespace Bakery
     public partial class Billing : System.Web.UI.Page
     {
         string qry = "";
+
         DataTable dt = new DataTable();
         Hashtable ht = new Hashtable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             lbl_Name.Text = "Hii, " + Session["userName"].ToString();
-            
+
             if (!this.IsPostBack)
             {
                 LoadData();
@@ -25,7 +26,11 @@ namespace Bakery
                     dt.Columns.Add("Cost");
                     dt.Columns.Add("Quantity");
                     dt.Columns.Add("Amount");
-                    ViewState["Records"] = dt;
+                    // Add more columns as needed
+
+                    ViewState["Records"] = dt; // Store the empty DataTable in ViewState
+                    dgv_Billing.DataSource = dt;
+                    dgv_Billing.DataBind();
                 }
             }
         }
@@ -77,9 +82,11 @@ namespace Bakery
 
                 dt = (DataTable)ViewState["Records"];
                 dt.Rows.Add(productID, productName, cost, quantity, amount);
+
+                ViewState["Records"] = dt; // Update ViewState
                 dgv_Billing.DataSource = dt;
                 dgv_Billing.DataBind();
-               
+
                 txt_Quantity.Text = "";
 
                 double totalAmount = 0;
